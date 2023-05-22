@@ -1,7 +1,7 @@
 {{ $webringJSON := getJSON . }}
 {{ $selfIndex := 0 }}
 {{ $rangeIndex := 0 }}
-{{ range $webringJSON }}
+{{ range $webringJSON.ring }}
   {{ rangeIndex += 1}}
   {{ if in .link $.Site.BaseURL }}
       {{ $selfIndex = $rangeIndex}}
@@ -9,12 +9,16 @@
 {{ end }}
 
 <div class="buttonRow">
-  <a href="" class="button">
+  {{ with index $webringJSON.ring ($selfIndex - 1)) }}
+  <a href="{{ .link }}" class="button">
       <span class="button__icon">←</span>
-      <span class="button__text">Previous Webring Site</span>
+      <span class="button__text">{{ .name }}</span>
   </a>
-  <a href="" class="button">
-      <span class="button__text">Next Webring Site</span>
+  {{ end }}
+  {{ with index $webringJSON.ring ($selfIndex + 1)) }}
+  <a href="{{ .link }}" class="button">
+      <span class="button__text">{{ .name }}</span>
       <span class="button__icon">→<span>
   </a>
+  {{ end }}
 </div>

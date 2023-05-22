@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "name": "demoWebring",
+  "root": "https://example.com/webring",
+  "ring": [
+    {
+      "name": "prevWebring Author",
+      "link": "prev.example.com"
+    },
+    {
+      "name": "nick",
+      "link": "blog.ndumas.com"
+    },
+    {
+      "name": "nextWebring Author",
+      "link": "next.example.com"
+    }
+  ]
+}
