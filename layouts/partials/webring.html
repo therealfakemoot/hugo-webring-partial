@@ -3,7 +3,7 @@
 {{ $rangeIndex := 0 }}
 {{ range $webringJSON.ring }}
   {{ $rangeIndex = add $rangeIndex 1}}
-  {{ if in .link $.Site.BaseURL }}
+  {{ if in site.BaseURL .link }}
       {{ $selfIndex = $rangeIndex}}
   {{ end }}
 {{ end }}
