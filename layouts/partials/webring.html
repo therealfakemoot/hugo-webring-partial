@@ -9,13 +9,13 @@
 {{ end }}
 
 <div class="buttonRow">
-  {{ with index $webringJSON.ring ($selfIndex - 1)) }}
+  {{ with index $webringJSON.ring (sub $selfIndex 1)) }}
   <a href="{{ .link }}" class="button">
       <span class="button__icon">←</span>
       <span class="button__text">{{ .name }}</span>
   </a>
   {{ end }}
-  {{ with index $webringJSON.ring ($selfIndex + 1)) }}
+  {{ with index $webringJSON.ring (add $selfIndex 1)) }}
   <a href="{{ .link }}" class="button">
       <span class="button__text">{{ .name }}</span>
       <span class="button__icon">→<span>
